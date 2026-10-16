@@ -58,7 +58,7 @@ Grounded in Wikipedia's
 ### Codex CLI
 
 ```bash
-git clone https://github.com/homelander-mm/humanize-academic.git
+git clone https://github.com/MinnKhantThuu/humanize-academic.git
 mkdir -p ~/.codex/skills
 cp -R humanize-academic/skills/humanize ~/.codex/skills/
 ```
@@ -69,7 +69,7 @@ requests, and README/docs work.
 ### Claude Code
 
 ```bash
-git clone https://github.com/homelander-mm/humanize-academic.git
+git clone https://github.com/MinnKhantThuu/humanize-academic.git
 mkdir -p ~/.claude/skills
 cp -R humanize-academic/skills/humanize ~/.claude/skills/
 ```
