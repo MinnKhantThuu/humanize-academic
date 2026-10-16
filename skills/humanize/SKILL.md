@@ -87,6 +87,11 @@ patterns. A formal register is not a license for robotic prose.
    rather than patching flagged phrases. Vary sentence length. Read it aloud
    in your head; if a sentence sounds like an announcement, it is a tell.
 
+Structural check before finalizing (runs alongside pass 3): count
+paragraph-blocks in the input. If most contain a single sentence, apply
+lever 2b (staccato-paragraph repair) — this pattern alone can hold a
+GPTZero score at 100 even after every sentence-level fix.
+
 ## The nine levers (apply in every rewrite)
 
 ### 1. Perplexity injection
@@ -103,6 +108,29 @@ nouns, not fancy adjectives.
 - Academic target: sentence-length standard deviation above 40% of the mean.
 - Long sentences are allowed only when the thought genuinely cannot be
   broken without losing the connection between its parts.
+
+### 2b. Staccato-paragraph repair (document-level burstiness)
+
+The strongest document-level AI tell, and the one sentence-level rules miss:
+one-sentence "paragraphs" stacked one after another. Detectors weight this
+heavily. If the input is a chain of single-line paragraphs (very common in
+AI-generated proposals and reports):
+
+- Merge related single-line paragraphs into multi-sentence paragraphs of
+  3-6 sentences. Two related facts belong in one paragraph, connected.
+- Vary paragraph lengths: after a 5-sentence paragraph, a 2-sentence one
+  reads human. Five paragraphs of identical shape reads generated.
+- Introduce connective tissue between related lines: "Attendance was the
+  first pain point: teachers needed something faster than paper lists."
+  instead of "Teachers need to record attendance quickly." as its own
+  paragraph.
+- Student/proposal voice: first person plural ("we proposed", "we noticed")
+  where the document type allows it, plus natural hedges ("in most cases",
+  "often") instead of absolute one-line claims.
+
+Target the whole document, not the sentence: GPTZero-class detectors read
+paragraph shape first. A 60-block document of one-liners can have decent
+per-sentence variance and still score 100%.
 
 ### 3. Hedge surgery
 Delete the standard hedge set: "it is important to note that", "it is worth
